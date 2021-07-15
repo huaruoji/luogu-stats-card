@@ -13,9 +13,9 @@ const {
  */
 async function fetchStats(id) {
   //debug 测试请求
-  const res = await axios.get(`https://a-1c37c2-1300876583.ap-shanghai.service.tcloudbase.com/luogu?id=${id}`);
+  //const res = await axios.get(`https://a-1c37c2-1300876583.ap-shanghai.service.tcloudbase.com/luogu?id=${id}`);
 
-  //const res = await axios.get(`https://www.luogu.com.cn/user/${id}?_contentOnly`)
+  const res = await axios.get(`https://www.luogu.com.cn/user/${id}?_contentOnly`)
 
   const stats = {
     name: "NULL",
@@ -82,6 +82,7 @@ const renderSVG = (stats, options) => {
   ]
   const passedSum = passed.reduce((a, b) => a + b);
   const body = renderChart(datas, labelWidth, progressWidth, "题");
+  const ranking = user.ranking;
 
   const title = renderNameTitle(name, color, ccfLevel, "的练习情况", cardWidth, `已通过: ${passedSum}题，被人吊打`);
 
