@@ -96,3 +96,4 @@ const renderSVG = (stats, options) => {
 }
 
 module.exports = { fetchStats, renderSVG }
+ 
